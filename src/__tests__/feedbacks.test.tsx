@@ -1,5 +1,13 @@
 import { render, screen } from "@testing-library/react";
-import { Alert, Backdrop, Dialog, Progress, Skeleton, Snackbar } from "../components/Feedbacks";
+import { describe, expect, it } from "vitest";
+import {
+  Alert,
+  Backdrop,
+  Dialog,
+  Progress,
+  Skeleton,
+  Snackbar,
+} from "../components/Feedbacks";
 import { Button } from "../components/Form";
 
 describe("Feedback components", () => {
@@ -10,7 +18,7 @@ describe("Feedback components", () => {
           Guardado
         </Alert>
         <Progress value={30} label="Carga" />
-      </>
+      </>,
     );
     expect(screen.getByText("Listo")).toBeInTheDocument();
     expect(screen.getByText("Carga")).toBeInTheDocument();
@@ -29,7 +37,7 @@ describe("Feedback components", () => {
         }
       >
         Contenido
-      </Dialog>
+      </Dialog>,
     );
     expect(screen.getByText("Confirmar")).toBeInTheDocument();
     expect(screen.getByText("Contenido")).toBeInTheDocument();
@@ -40,7 +48,7 @@ describe("Feedback components", () => {
       <>
         <Skeleton width={100} height={10} />
         <Snackbar open message="Hola" />
-      </>
+      </>,
     );
     expect(screen.getByText("Hola")).toBeInTheDocument();
   });

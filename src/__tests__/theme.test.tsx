@@ -1,4 +1,5 @@
 import { render, screen } from "@testing-library/react";
+import { describe, expect, it } from "vitest";
 import { ThemeProvider, ThemeSwitcher } from "../components/Styles";
 
 describe("Theme components", () => {
@@ -6,7 +7,7 @@ describe("Theme components", () => {
     render(
       <ThemeProvider>
         <ThemeSwitcher />
-      </ThemeProvider>
+      </ThemeProvider>,
     );
     expect(screen.getByLabelText(/Tema/i)).toBeInTheDocument();
   });

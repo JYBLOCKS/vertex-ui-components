@@ -1,4 +1,5 @@
-import { render, screen, fireEvent } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
+import { describe, expect, it, vi } from "vitest";
 import {
   Button,
   Calendar,
@@ -22,7 +23,7 @@ describe("Form components", () => {
           Guardar
         </Button>
         <Button variant="ghost">Ghost</Button>
-      </>
+      </>,
     );
     fireEvent.click(screen.getByText("Guardar"));
     expect(handleClick).toHaveBeenCalled();
@@ -34,7 +35,7 @@ describe("Form components", () => {
       <>
         <Input placeholder="Nombre" />
         <InputArea placeholder="Nota" />
-      </>
+      </>,
     );
     const input = screen.getByPlaceholderText("Nombre") as HTMLInputElement;
     fireEvent.change(input, { target: { value: "Ana" } });
@@ -47,7 +48,7 @@ describe("Form components", () => {
       <Select defaultValue="1">
         <option value="1">Uno</option>
         <option value="2">Dos</option>
-      </Select>
+      </Select>,
     );
     expect(screen.getByDisplayValue("Uno")).toBeInTheDocument();
   });
@@ -57,7 +58,7 @@ describe("Form components", () => {
       <>
         <Checkbox label="Aceptar" checked onChange={() => undefined} />
         <Switch label="Encendido" checked onChange={() => undefined} />
-      </>
+      </>,
     );
     expect(screen.getByText("Aceptar")).toBeInTheDocument();
     expect(screen.getByRole("switch")).toBeInTheDocument();
@@ -68,7 +69,7 @@ describe("Form components", () => {
       <>
         <Slider min={0} max={100} defaultValue={50} />
         <Rating value={3} onChange={() => undefined} />
-      </>
+      </>,
     );
     expect(screen.getByRole("slider")).toBeInTheDocument();
     expect(screen.getAllByRole("button").length).toBeGreaterThan(0);
@@ -80,7 +81,7 @@ describe("Form components", () => {
         <Calendar />
         <DatePicker />
         <TimePicker />
-      </>
+      </>,
     );
     expect(screen.getAllByRole("textbox").length).toBeGreaterThanOrEqual(1);
   });

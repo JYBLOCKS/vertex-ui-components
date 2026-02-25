@@ -1,73 +1,121 @@
-# React + TypeScript + Vite
+# Vertex UI Components
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Libreria de componentes UI reutilizables para React + TypeScript, con playground local en Vite para desarrollo y documentación visual.
 
-Currently, two official plugins are available:
+Incluye componentes en las categorias:
+- `Form`
+- `Navigation`
+- `Layout`
+- `Surfaces`
+- `DataDisplay`
+- `Feedbacks`
+- `Charts`
+- `Styles` (tema y theme switcher)
+- `Utils`
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Stack
 
-## React Compiler
+- React 19
+- TypeScript 5
+- Vite 7
+- Vitest + Testing Library
+- ESLint (flat config)
+- Bun (gestor recomendado en este repo)
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+## Estructura del proyecto
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```text
+src/
+  components/        # componentes y barrels por categoria
+  lib/index.ts       # entrada publica de la libreria npm
+  pages/             # playground local (Home/NotFound)
+  styles/main.css    # estilos base + variables globales
+  __tests__/         # pruebas unitarias/integracion de componentes
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Scripts de desarrollo
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- `bun install`: instala dependencias
+- `bun run dev`: entorno local con HMR (playground)
+- `bun run lint`: validacion de estilo y calidad
+- `bun run test`: ejecuta tests con Vitest
+- `bun run build:app`: build del playground/app
+- `bun run build:lib`: build de libreria npm + declaraciones TypeScript
+- `bun run build`: alias recomendado para build de libreria
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Uso como libreria (consumidor)
+
+Instalacion:
+
+```bash
+npm install vertex-ui-components
 ```
+
+Uso basico:
+
+```tsx
+import { Button, Card, ThemeProvider } from "vertex-ui-components";
+import "vertex-ui-components/styles.css";
+
+export function Example() {
+  return (
+    <ThemeProvider>
+      <Card title="Demo">
+        <Button variant="primary">Guardar</Button>
+      </Card>
+    </ThemeProvider>
+  );
+}
+```
+
+## API publica del paquete
+
+El paquete expone:
+- `.`: componentes y tipos (`import { Button } from "vertex-ui-components"`)
+- `./styles.css`: estilos compilados globales de la libreria
+
+Salida de build:
+- `dist/index.js` (ESM)
+- `dist/index.cjs` (CommonJS)
+- `dist/styles.css`
+- `dist/types/**` (declaraciones `.d.ts`)
+
+## Desarrollo de componentes
+
+Reglas del repo:
+- Mantener componentes como function components con TypeScript estricto.
+- Exportar componente y tipos desde el `index.ts` de su categoria.
+- Mantener CSS co-localizado (`Component.css`) y prefijo `vx-`.
+- Evitar dependencias del playground (`src/pages`) en codigo de libreria.
+
+Checklist al agregar un componente:
+1. Crear carpeta del componente y su CSS.
+2. Exportar en el `index.ts` de categoria.
+3. Verificar que quede exportado desde `src/lib/index.ts`.
+4. Agregar/actualizar test.
+5. Ejecutar `bun run lint`, `bun run test`, `bun run build:lib`.
+
+## Publicacion en npm
+
+1. Actualizar version en `package.json` con semver.
+2. Ejecutar validaciones:
+   - `bun run lint`
+   - `bun run test`
+   - `bun run build:lib`
+3. Verificar artefactos:
+   - `npm pack --dry-run`
+4. Publicar:
+   - `npm publish --access public`
+
+`prepublishOnly` ya ejecuta lint + tests + build de libreria.
+
+## Skills del proyecto
+
+Se incluyen skills locales para acelerar trabajo repetitivo:
+- `skills/vertex-ui-maintainer/SKILL.md`: mantenimiento y evolucion de componentes.
+- `skills/vertex-ui-npm-release/SKILL.md`: empaquetado y release a npm.
+
+## Estado actual de testing
+
+Hay suite de pruebas existente en `src/__tests__` cubriendo categorias principales.
+Si agregas componentes nuevos, incluye pruebas de comportamiento (evitar snapshots como unica cobertura).

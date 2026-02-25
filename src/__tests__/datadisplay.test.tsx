@@ -1,5 +1,14 @@
 import { render, screen } from "@testing-library/react";
-import { Avatar, Badge, Chip, List, Table, Tooltip, Icons } from "../components/DataDisplay";
+import { describe, expect, it } from "vitest";
+import {
+  Avatar,
+  Badge,
+  Chip,
+  Icons,
+  List,
+  Table,
+  Tooltip,
+} from "../components/DataDisplay";
 
 const listItems = [
   { title: "Item 1", description: "Detalle", meta: "OK" },
@@ -22,7 +31,7 @@ describe("DataDisplay components", () => {
         <Avatar name="Demo User" />
         <Badge color="blue">Nuevo</Badge>
         <Chip>Filtro</Chip>
-      </>
+      </>,
     );
     expect(screen.getByLabelText("Demo User")).toBeInTheDocument();
     expect(screen.getByText("Nuevo")).toBeInTheDocument();
@@ -32,9 +41,14 @@ describe("DataDisplay components", () => {
   it("renders List and Table", () => {
     render(
       <>
-        <List items={listItems} />
+        <List
+          items={listItems.map((item) => ({
+            content: item.title,
+            meta: item.meta,
+          }))}
+        />
         <Table columns={cols} data={rows} />
-      </>
+      </>,
     );
     expect(screen.getByText("Item 1")).toBeInTheDocument();
     expect(screen.getByText("Ana")).toBeInTheDocument();
@@ -44,7 +58,7 @@ describe("DataDisplay components", () => {
     render(
       <Tooltip content="Ayuda">
         <Icons name="spark" />
-      </Tooltip>
+      </Tooltip>,
     );
     expect(screen.getByLabelText("spark")).toBeInTheDocument();
   });

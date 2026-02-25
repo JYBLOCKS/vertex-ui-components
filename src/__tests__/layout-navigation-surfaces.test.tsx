@@ -1,4 +1,6 @@
 import { render, screen } from "@testing-library/react";
+import { describe, expect, it } from "vitest";
+import { Button } from "../components/Form";
 import { Box, Container, Flex, Grid } from "../components/Layout";
 import {
   Breadcrumbs,
@@ -10,7 +12,6 @@ import {
   Tabs,
 } from "../components/Navigation";
 import { Accordion, Card, Footer, Nav, Paper } from "../components/Surfaces";
-import { Button } from "../components/Form";
 
 describe("Layout, Navigation, Surfaces components", () => {
   it("renders layout primitives", () => {
@@ -22,7 +23,7 @@ describe("Layout, Navigation, Surfaces components", () => {
         <Grid columns={2}>
           <Box>Grid item</Box>
         </Grid>
-      </Container>
+      </Container>,
     );
     expect(screen.getByText("Box")).toBeInTheDocument();
     expect(screen.getByText("Grid item")).toBeInTheDocument();
@@ -36,9 +37,11 @@ describe("Layout, Navigation, Surfaces components", () => {
         <Stepper steps={[{ label: "A" }, { label: "B" }]} active={0} />
         <Tabs tabs={[{ id: "a", label: "A", content: "Contenido A" }]} />
         <Menu items={[{ label: "Perfil" }]} />
-        <Drawer open header="Panel">Contenido</Drawer>
+        <Drawer open header="Panel">
+          Contenido
+        </Drawer>
         <FloatButton />
-      </>
+      </>,
     );
     expect(screen.getByText("Home")).toBeInTheDocument();
     expect(screen.getByText("Contenido A")).toBeInTheDocument();
@@ -49,19 +52,17 @@ describe("Layout, Navigation, Surfaces components", () => {
     render(
       <>
         <Accordion items={[{ id: "a", title: "Titulo", content: "Detalle" }]} />
-        <Card title="Card" actions={<Button size="sm">OK</Button>}>
+        <Card title="Card" actions={<Button>OK</Button>}>
           Cuerpo
         </Card>
-        <Nav brand="Brand" actions={<Button size="sm">Accion</Button>}>
-          <Button variant="ghost" size="sm">
-            Link
-          </Button>
+        <Nav brand="Brand" actions={<Button>Accion</Button>}>
+          <Button variant="ghost">Link</Button>
         </Nav>
         <Paper elevation="sm">Panel</Paper>
         <Footer left="(c) 2025" right="Soporte">
           Centro
         </Footer>
-      </>
+      </>,
     );
     expect(screen.getByText("Titulo")).toBeInTheDocument();
     expect(screen.getByText("Cuerpo")).toBeInTheDocument();

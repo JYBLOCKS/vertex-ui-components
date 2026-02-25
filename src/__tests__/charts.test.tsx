@@ -1,4 +1,5 @@
 import { render, screen } from "@testing-library/react";
+import { describe, expect, it } from "vitest";
 import { Bars, Gauge, Lines, Pie } from "../components/Charts";
 
 describe("Charts components", () => {
@@ -10,7 +11,7 @@ describe("Charts components", () => {
           { label: "Q1", value: 40 },
           { label: "Q2", value: 60 },
         ]}
-      />
+      />,
     );
     expect(screen.getByText("Ventas")).toBeInTheDocument();
     expect(screen.getByText("Q1")).toBeInTheDocument();
