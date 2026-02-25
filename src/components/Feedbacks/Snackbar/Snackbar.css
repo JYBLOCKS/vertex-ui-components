@@ -1,0 +1,56 @@
+.vx-snackbar {
+  /* Component-scoped tokens */
+  --vx-snackbar-bg: var(--vx-primary, #0f172a);
+  --vx-snackbar-color: #f8fafc;
+  --vx-snackbar-radius: 0.9rem;
+  --vx-snackbar-padding: 0.9rem 1.05rem;
+  --vx-snackbar-shadow: var(--vx-shadow, 0 12px 30px rgba(15, 23, 42, 0.25));
+  --vx-snackbar-dot: #fff;
+  position: fixed;
+  background: var(--vx-snackbar-bg);
+  color: var(--vx-snackbar-color);
+  padding: var(--vx-snackbar-padding);
+  border-radius: var(--vx-snackbar-radius);
+  box-shadow: var(--vx-snackbar-shadow);
+  z-index: 40;
+  max-width: 320px;
+  display: inline-flex;
+  gap: 0.65rem;
+  align-items: center;
+  opacity: 0;
+  transform: translate(var(--vx-snackbar-offset-x, 0), var(--vx-snackbar-shift, 10px)) scale(0.985);
+  animation: vx-snackbar-enter 220ms ease forwards;
+}
+
+.vx-snackbar--top-left,
+.vx-snackbar--top-center,
+.vx-snackbar--top-right {
+  --vx-snackbar-shift: -8px;
+}
+
+.vx-snackbar--bottom-left,
+.vx-snackbar--bottom-center,
+.vx-snackbar--bottom-right {
+  --vx-snackbar-shift: 12px;
+}
+
+.vx-snackbar::before {
+  content: "";
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--vx-snackbar-dot), rgba(255, 255, 255, 0.5));
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--vx-snackbar-dot) 25%, transparent);
+  opacity: 0.85;
+}
+
+@keyframes vx-snackbar-enter {
+  from {
+    opacity: 0;
+    transform: translate(var(--vx-snackbar-offset-x, 0), var(--vx-snackbar-shift, 10px)) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translate(var(--vx-snackbar-offset-x, 0), 0) scale(1);
+  }
+}

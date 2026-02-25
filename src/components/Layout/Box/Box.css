@@ -1,0 +1,6 @@
+.vx-box {
+  padding: 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid var(--vx-border, #e2e8f0);
+  background: var(--vx-surface-elevated, #ffffff);
+}

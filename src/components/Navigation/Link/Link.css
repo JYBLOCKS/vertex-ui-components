@@ -1,0 +1,17 @@
+.vx-link {
+  color: var(--vx-primary, #2563eb);
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.vx-link:hover {
+  text-decoration: underline;
+}
+
+.vx-link__icon {
+  display: inline-flex;
+  align-items: center;
+}

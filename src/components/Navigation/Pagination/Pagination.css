@@ -1,0 +1,26 @@
+.vx-pagination {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--vx-surface-elevated, #ffffff);
+  border: 1px solid var(--vx-border, #e2e8f0);
+  border-radius: 999px;
+  padding: 0.35rem 0.75rem;
+}
+
+.vx-pagination button {
+  border: none;
+  background: var(--vx-surface-muted, #f8fafc);
+  padding: 0.35rem 0.6rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.vx-pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.vx-pagination span {
+  font-weight: 600;
+}

@@ -1,0 +1,24 @@
+.vx-card {
+  border: 1px solid var(--vx-border, #e2e8f0);
+  border-radius: 0.9rem;
+  background: var(--vx-surface-elevated, #ffffff);
+  box-shadow: var(--vx-shadow, 0 12px 28px rgba(15, 23, 42, 0.08));
+}
+
+.vx-card__header {
+  padding: 0.9rem 1rem 0.6rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  font-weight: 700;
+}
+
+.vx-card__body {
+  padding: 0.5rem 1rem 1rem;
+  color: var(--vx-muted, #475569);
+}
+
+.vx-card__actions {
+  display: inline-flex;
+  gap: 0.4rem;
+}

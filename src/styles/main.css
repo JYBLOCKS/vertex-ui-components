@@ -1,0 +1,179 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* Vintage Barbershop Color Palette */
+  --background: 40 30% 96%;
+  --foreground: 220 20% 12%;
+
+  --card: 40 25% 98%;
+  --card-foreground: 220 20% 12%;
+
+  --popover: 40 25% 98%;
+  --popover-foreground: 220 20% 12%;
+
+  /* Deep Navy - Classic Barber Pole */
+  --primary: 220 45% 20%;
+  --primary-foreground: 40 30% 96%;
+
+  /* Rich Burgundy */
+  --secondary: 350 65% 35%;
+  --secondary-foreground: 40 30% 96%;
+
+  /* Cream/Ivory */
+  --muted: 40 20% 90%;
+  --muted-foreground: 220 15% 40%;
+
+  /* Gold Accent */
+  --accent: 42 85% 55%;
+  --accent-foreground: 220 20% 12%;
+
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 40% 98%;
+
+  --border: 40 15% 85%;
+  --input: 40 15% 85%;
+  --ring: 42 85% 55%;
+
+  --radius: 0.5rem;
+
+  --vx-primary: #2563eb;
+  --vx-secondary: #0ea5e9;
+  --vx-accent: #7c3aed;
+  --vx-surface: #ffffff;
+  --vx-text: #0f172a;
+  --vx-muted: #475569;
+  --vx-border: #e2e8f0;
+  --vx-surface-muted: #f6f8fb;
+  --vx-surface-elevated: #ffffff;
+  --vx-code-bg: #0f172a;
+  --vx-code-text: #e2e8f0;
+  --vx-shadow: 0 8px 20px rgba(15, 23, 42, 0.05);
+
+  /* Tailwind color hooks */
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-gold: hsl(var(--gold));
+  --color-gold-dark: hsl(var(--gold-dark));
+  --color-burgundy: hsl(var(--burgundy));
+  --color-burgundy-light: hsl(var(--burgundy-light));
+  --color-navy: hsl(var(--navy));
+  --color-navy-light: hsl(var(--navy-light));
+  --color-cream: hsl(var(--cream));
+  --color-cream-dark: hsl(var(--cream-dark));
+  --color-sidebar-background: hsl(var(--sidebar-background));
+  --color-sidebar-foreground: hsl(var(--sidebar-foreground));
+  --color-sidebar-primary: hsl(var(--sidebar-primary));
+  --color-sidebar-primary-foreground: hsl(var(--sidebar-primary-foreground));
+  --color-sidebar-accent: hsl(var(--sidebar-accent));
+  --color-sidebar-accent-foreground: hsl(var(--sidebar-accent-foreground));
+  --color-sidebar-border: hsl(var(--sidebar-border));
+  --color-sidebar-ring: hsl(var(--sidebar-ring));
+
+  /* Gradients */
+  --gradient-gold: linear-gradient(135deg, hsl(42 85% 55%), hsl(42 75% 45%));
+  --gradient-burgundy: linear-gradient(
+    135deg,
+    hsl(350 65% 35%),
+    hsl(350 55% 45%)
+  );
+  --gradient-navy: linear-gradient(135deg, hsl(220 45% 20%), hsl(220 35% 30%));
+
+  /* Shadows */
+  --shadow-elegant: 0 4px 20px -4px hsl(220 45% 20% / 0.15);
+  --shadow-gold: 0 4px 20px -4px hsl(42 85% 55% / 0.4);
+
+  /* Sidebar defaults */
+  --sidebar-background: 40 25% 98%;
+  --sidebar-foreground: 220 20% 12%;
+  --sidebar-primary: 220 45% 20%;
+  --sidebar-primary-foreground: 40 30% 96%;
+  --sidebar-accent: 40 20% 90%;
+  --sidebar-accent-foreground: 220 20% 12%;
+  --sidebar-border: 40 15% 85%;
+  --sidebar-ring: 42 85% 55%;
+}
+
+@variant dark {
+  --background: 220 25% 8%;
+  --foreground: 40 30% 96%;
+
+  --card: 220 25% 12%;
+  --card-foreground: 40 30% 96%;
+
+  --popover: 220 25% 12%;
+  --popover-foreground: 40 30% 96%;
+
+  --primary: 42 85% 55%;
+  --primary-foreground: 220 20% 12%;
+
+  --secondary: 350 55% 45%;
+  --secondary-foreground: 40 30% 96%;
+
+  --muted: 220 20% 18%;
+  --muted-foreground: 40 15% 65%;
+
+  --accent: 42 85% 55%;
+  --accent-foreground: 220 20% 12%;
+
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 210 40% 98%;
+
+  --border: 220 20% 18%;
+  --input: 220 20% 18%;
+  --ring: 42 85% 55%;
+
+  --sidebar-background: 220 25% 10%;
+  --sidebar-foreground: 40 30% 96%;
+  --sidebar-primary: 42 85% 55%;
+  --sidebar-primary-foreground: 220 20% 12%;
+  --sidebar-accent: 220 20% 18%;
+  --sidebar-accent-foreground: 40 30% 96%;
+  --sidebar-border: 220 20% 18%;
+  --sidebar-ring: 42 85% 55%;
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  body {
+    margin: 0;
+    font-family: "Manrope", "Segoe UI", system-ui, -apple-system, sans-serif;
+    background: var(--vx-surface-muted, #f6f8fb);
+    color: var(--vx-text, #0f172a);
+    line-height: 1.6;
+
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+}
+
+@layer utilities {
+  #root {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    min-height: 100vh;
+  }
+}

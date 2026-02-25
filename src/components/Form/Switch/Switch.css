@@ -1,0 +1,45 @@
+.vx-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.vx-switch input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.vx-switch__track {
+  width: 2.5rem;
+  height: 1.4rem;
+  border-radius: 999px;
+  background-color: var(--vx-border, #d1d5db);
+  display: inline-flex;
+  align-items: center;
+  padding: 0.15rem;
+  transition: background-color 140ms ease;
+}
+
+.vx-switch__thumb {
+  width: 1.1rem;
+  height: 1.1rem;
+  border-radius: 50%;
+  background-color: var(--vx-surface-elevated, #ffffff);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);
+  transition: transform 140ms ease;
+}
+
+.vx-switch input:checked + .vx-switch__track {
+  background-color: var(--vx-primary, #2563eb);
+}
+
+.vx-switch input:checked + .vx-switch__track .vx-switch__thumb {
+  transform: translateX(1.05rem);
+}
+
+.vx-switch__label {
+  color: var(--vx-text, #111827);
+  font-size: 0.95rem;
+}

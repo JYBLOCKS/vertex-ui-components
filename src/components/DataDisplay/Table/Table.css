@@ -1,0 +1,24 @@
+.vx-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--vx-surface-elevated, #ffffff);
+  border: 1px solid var(--vx-border, #e2e8f0);
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.vx-table thead {
+  background: var(--vx-surface-muted, #f8fafc);
+  color: var(--vx-text, #0f172a);
+}
+
+.vx-table th,
+.vx-table td {
+  padding: 0.65rem 0.75rem;
+  border-bottom: 1px solid var(--vx-border, #e2e8f0);
+  text-align: left;
+}
+
+.vx-table tbody tr:last-child td {
+  border-bottom: none;
+}

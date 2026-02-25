@@ -1,0 +1,152 @@
+.vx-stepper {
+  /* Component-scoped tokens */
+  --vx-stepper-gap: 0.5rem;
+  --vx-stepper-label: var(--vx-text, #0f172a);
+  --vx-stepper-muted: var(--vx-muted, #475569);
+  --vx-stepper-surface: var(--vx-surface, #ffffff);
+  --vx-stepper-border: var(--vx-border, #e2e8f0);
+  --vx-stepper-active: var(--vx-primary, #2563eb);
+  --vx-stepper-connector-height: 0.65rem;
+  --vx-stepper-bullet: 2rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: var(--vx-stepper-gap);
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+.vx-stepper li {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  color: var(--vx-stepper-muted);
+  position: relative;
+  flex: 1 1 0;
+  min-width: 0;
+  padding-inline: 0.25rem;
+}
+
+.vx-stepper__connector {
+  position: absolute;
+  top: 17%;
+  left: -50%;
+  right: 50%;
+  height: var(--vx-stepper-connector-height);
+  background: linear-gradient(
+    90deg,
+    var(--vx-step-from, #cbd5e1) 0%,
+    color-mix(
+        in srgb,
+        var(--vx-step-from, #cbd5e1) 30%,
+        var(--vx-step-to, #2563eb)
+      )
+      50%,
+    var(--vx-step-to, #2563eb) 100%
+  );
+  border-radius: 999px;
+}
+
+.vx-stepper__connector::before,
+.vx-stepper__connector::after {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  background: inherit;
+  border-radius: 999px;
+  z-index: -1;
+  transition: opacity 180ms ease;
+}
+
+.vx-stepper__connector::before {
+  opacity: 0.28;
+  filter: blur(12px);
+}
+
+.vx-stepper__connector::after {
+  opacity: 0.6;
+  filter: blur(8px);
+}
+
+.vx-stepper__bullet {
+  width: var(--vx-stepper-bullet);
+  height: var(--vx-stepper-bullet);
+  border-radius: 999px;
+  background: var(--vx-stepper-surface);
+  color: var(--vx-stepper-label);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  box-shadow: 0 10px 22px rgba(15, 23, 42, 0.12),
+    0 0 0 1px var(--vx-stepper-border);
+  position: relative;
+  z-index: 1;
+  padding-top: 0.05rem;
+  transition: transform 220ms ease, box-shadow 220ms ease, background 220ms ease,
+    color 220ms ease;
+}
+
+.vx-stepper__bullet-content {
+  position: relative;
+  z-index: 1;
+}
+
+.vx-stepper__label {
+  font-weight: 600;
+  color: var(--vx-stepper-label);
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  text-align: center;
+  transition: color 200ms ease, opacity 200ms ease;
+}
+
+.vx-stepper li.is-active .vx-stepper__bullet,
+.vx-stepper li.is-complete .vx-stepper__bullet {
+  background: var(--vx-step-to, var(--vx-stepper-active));
+  color: #fff;
+}
+
+.vx-stepper li.is-active .vx-stepper__bullet,
+.vx-stepper li.is-complete .vx-stepper__bullet {
+  box-shadow: 0 14px 26px
+      color-mix(in srgb, var(--vx-step-to, #2563eb) 35%, rgba(15, 23, 42, 0.35)),
+    0 0 0 1px color-mix(in srgb, var(--vx-step-to, #2563eb) 40%, transparent);
+}
+
+.vx-stepper li.is-active .vx-stepper__bullet::before,
+.vx-stepper li.is-complete .vx-stepper__bullet::before {
+  opacity: 0.8;
+  filter: blur(0.2px);
+  animation: vx-stepper-ring 2.4s linear infinite;
+}
+
+.vx-stepper li.is-active .vx-stepper__connector,
+.vx-stepper li.is-complete .vx-stepper__connector {
+  background-position: 100% 50%;
+  animation: vx-stepper-flow 2.6s ease-in-out infinite;
+}
+
+.vx-stepper li.is-active .vx-stepper__label {
+  color: var(--vx-step-to, var(--vx-stepper-active));
+}
+
+.vx-stepper li.is-complete .vx-stepper__label {
+  color: var(--vx-stepper-label);
+}
+
+@keyframes vx-stepper-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

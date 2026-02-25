@@ -1,0 +1,28 @@
+.vx-breadcrumbs ol {
+  list-style: none;
+  display: flex;
+  gap: 0.5rem;
+  padding: 0;
+  margin: 0;
+  color: var(--vx-muted, #475569);
+}
+
+.vx-breadcrumbs a,
+.vx-breadcrumbs button {
+  color: var(--vx-primary, #2563eb);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.vx-breadcrumbs li + li::before {
+  content: "/";
+  margin-right: 0.5rem;
+  color: color-mix(in srgb, var(--vx-muted, #475569) 50%, transparent);
+}
+
+.vx-breadcrumbs li[aria-current="page"] {
+  color: var(--vx-text, #0f172a);
+  font-weight: 600;
+}

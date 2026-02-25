@@ -1,0 +1,38 @@
+.vx-dialog__wrap {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: rgba(15, 23, 42, 0.35);
+  z-index: 30;
+  padding: 1rem;
+}
+
+.vx-dialog {
+  background: var(--vx-surface-elevated, #ffffff);
+  border-radius: 1rem;
+  border: 1px solid var(--vx-border, #e2e8f0);
+  box-shadow: var(--vx-shadow, 0 16px 40px rgba(15, 23, 42, 0.15));
+  max-width: 520px;
+  width: min(520px, 100%);
+  display: flex;
+  flex-direction: column;
+}
+
+.vx-dialog__header {
+  padding: 1rem 1.25rem 0.5rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.vx-dialog__body {
+  padding: 0.5rem 1.25rem 1rem;
+  color: var(--vx-muted, #475569);
+}
+
+.vx-dialog__footer {
+  padding: 0.75rem 1.25rem 1.1rem;
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}

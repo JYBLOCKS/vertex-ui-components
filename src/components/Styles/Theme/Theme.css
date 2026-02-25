@@ -1,0 +1,72 @@
+.vx-theme {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.vx-theme label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--vx-text, #0f172a);
+}
+
+.vx-theme select {
+  border-radius: 0.5rem;
+  border: 1px solid var(--vx-border, #e2e8f0);
+  padding: 0.35rem 0.5rem;
+}
+
+.vx-theme__swatches {
+  display: inline-flex;
+  gap: 0.35rem;
+}
+
+.vx-theme__swatches button {
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 999px;
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+
+.vx-theme__swatches button.is-active {
+  border-color: var(--vx-text, #0f172a);
+}
+
+.vx-theme__mode {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.vx-theme__mode select {
+  border-radius: 0.5rem;
+  border: 1px solid var(--vx-border, #e2e8f0);
+  padding: 0.35rem 0.5rem;
+}
+
+.vx-theme__palette {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.35rem 0.5rem;
+}
+
+.vx-theme__palette label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.35rem 0.5rem;
+  border: 1px solid var(--vx-border, #e2e8f0);
+  border-radius: 0.6rem;
+  background: var(--vx-surface-elevated, #ffffff);
+}
+
+.vx-theme__palette input[type="color"] {
+  width: 2.5rem;
+  height: 2rem;
+  padding: 0;
+  border: none;
+  background: none;
+}

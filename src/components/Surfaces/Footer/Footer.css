@@ -1,0 +1,18 @@
+.vx-footer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  background: var(--vx-primary, #0f172a);
+  color: var(--vx-code-text, #e2e8f0);
+  border-radius: 0.75rem;
+}
+
+.vx-footer__side {
+  min-width: 120px;
+}
+
+.vx-footer__main {
+  flex: 1;
+  text-align: center;
+}

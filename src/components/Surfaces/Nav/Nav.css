@@ -1,0 +1,27 @@
+.vx-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid var(--vx-border, #e2e8f0);
+  background: var(--vx-surface-elevated, #ffffff);
+  box-shadow: var(--vx-shadow, 0 8px 20px rgba(15, 23, 42, 0.05));
+}
+
+.vx-nav__brand {
+  font-weight: 800;
+  color: var(--vx-text, #0f172a);
+}
+
+.vx-nav__links {
+  display: inline-flex;
+  gap: 0.75rem;
+  color: var(--vx-muted, #475569);
+}
+
+.vx-nav__actions {
+  display: inline-flex;
+  gap: 0.5rem;
+}

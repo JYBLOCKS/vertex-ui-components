@@ -1,0 +1,28 @@
+.vx-rating {
+  display: inline-flex;
+  gap: 0.35rem;
+  align-items: center;
+}
+
+.vx-rating__star {
+  appearance: none;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: var(--vx-rating-muted, var(--vx-border, #d1d5db));
+  transition: color 120ms ease, transform 120ms ease;
+}
+
+.vx-rating__star:hover:not(:disabled) {
+  transform: translateY(-1px);
+  color: var(--vx-rating-hover, #f59e0b);
+}
+
+.vx-rating__star.is-active {
+  color: var(--vx-rating-active, #fbbf24);
+}
+
+.vx-rating--readonly .vx-rating__star {
+  cursor: default;
+}

@@ -1,0 +1,21 @@
+.vx-container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.vx-container--sm {
+  max-width: 640px;
+}
+
+.vx-container--md {
+  max-width: 768px;
+}
+
+.vx-container--lg {
+  max-width: 1024px;
+}
+
+.vx-container--xl {
+  max-width: 1200px;
+}

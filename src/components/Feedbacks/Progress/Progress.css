@@ -1,0 +1,98 @@
+.vx-progress {
+  width: 100%;
+  border: 1px solid var(--vx-border, #e2e8f0);
+  border-radius: 0.9rem;
+  padding: 0.75rem 0.9rem;
+  background: var(--vx-surface-elevated, #ffffff);
+  box-shadow: var(--vx-shadow, 0 8px 20px rgba(15, 23, 42, 0.04));
+}
+
+.vx-progress__meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--vx-text, #0f172a);
+  margin-bottom: 0.45rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.vx-progress__label {
+  color: var(--vx-muted, #475569);
+  font-weight: 700;
+}
+
+.vx-progress__value {
+  font-variant-numeric: tabular-nums;
+}
+
+.vx-progress__track {
+  position: relative;
+  width: 100%;
+  height: 14px;
+  border-radius: 999px;
+  background: color-mix(
+    in srgb,
+    var(--vx-surface-muted, #f1f5f9) 85%,
+    var(--vx-surface, #ffffff)
+  );
+  overflow: hidden;
+  border: 1px solid
+    color-mix(in srgb, var(--vx-border, #e2e8f0) 70%, transparent);
+}
+
+.vx-progress__fill {
+  position: absolute;
+  inset: 0;
+  width: 0;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #22c55e, #16a34a 40%, #15803d);
+  transition: width 220ms ease;
+  overflow: hidden;
+}
+
+.vx-progress__shine {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 15%,
+    rgba(255, 255, 255, 0.4) 35%,
+    rgba(255, 255, 255, 0) 60%
+  );
+  transform: translateX(-100%);
+  animation: vx-progress-shine 1.3s ease-in-out infinite;
+}
+
+.vx-progress__track.is-indeterminate .vx-progress__fill {
+  width: 36%;
+  animation: vx-progress-drift 1.6s ease-in-out infinite;
+}
+
+.vx-progress.is-complete .vx-progress__fill {
+  background: linear-gradient(90deg, #22c55e, #16a34a);
+}
+
+@keyframes vx-progress-shine {
+  0% {
+    transform: translateX(-90%);
+  }
+  60% {
+    transform: translateX(90%);
+  }
+  100% {
+    transform: translateX(120%);
+  }
+}
+
+@keyframes vx-progress-drift {
+  0% {
+    transform: translateX(-40%);
+  }
+  50% {
+    transform: translateX(40%);
+  }
+  100% {
+    transform: translateX(120%);
+  }
+}

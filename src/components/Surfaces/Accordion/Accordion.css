@@ -1,0 +1,29 @@
+.vx-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.vx-accordion__item {
+  border: 1px solid var(--vx-border, #e2e8f0);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  background: var(--vx-surface-elevated, #ffffff);
+}
+
+.vx-accordion__item button {
+  width: 100%;
+  padding: 0.75rem 0.9rem;
+  border: none;
+  background: var(--vx-surface-muted, #f8fafc);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.vx-accordion__content {
+  padding: 0.75rem 0.9rem;
+  color: var(--vx-muted, #475569);
+}

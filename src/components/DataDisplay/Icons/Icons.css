@@ -1,0 +1,7 @@
+.vx-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--vx-text, #0f172a);
+  line-height: 1;
+}

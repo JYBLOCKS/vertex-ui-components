@@ -1,0 +1,18 @@
+.vx-paper {
+  background: var(--vx-surface-elevated, #ffffff);
+  border: 1px solid var(--vx-border, #e2e8f0);
+  border-radius: 0.75rem;
+  padding: 1rem;
+}
+
+.vx-paper--sm {
+  box-shadow: var(--vx-shadow, 0 6px 14px rgba(15, 23, 42, 0.06));
+}
+
+.vx-paper--md {
+  box-shadow: var(--vx-shadow, 0 10px 24px rgba(15, 23, 42, 0.08));
+}
+
+.vx-paper--lg {
+  box-shadow: var(--vx-shadow, 0 16px 36px rgba(15, 23, 42, 0.12));
+}

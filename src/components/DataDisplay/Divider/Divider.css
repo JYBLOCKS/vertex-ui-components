@@ -1,0 +1,5 @@
+.vx-divider {
+  border: none;
+  border-bottom: 1px solid var(--vx-border, #e2e8f0);
+  margin: 0.5rem 0;
+}

@@ -1,0 +1,23 @@
+.vx-text {
+  margin: 0;
+}
+
+.vx-text--muted {
+  color: var(--vx-muted, #475569);
+}
+
+.vx-text--danger {
+  color: #dc2626;
+}
+
+.vx-text--success {
+  color: #16a34a;
+}
+
+.vx-text--semibold {
+  font-weight: 600;
+}
+
+.vx-text--bold {
+  font-weight: 700;
+}

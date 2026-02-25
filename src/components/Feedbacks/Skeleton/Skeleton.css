@@ -1,0 +1,23 @@
+.vx-skeleton {
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--vx-surface-muted, #f1f5f9) 70%, #fff) 25%,
+    color-mix(in srgb, var(--vx-border, #e2e8f0) 90%, #fff) 50%,
+    color-mix(in srgb, var(--vx-surface-muted, #f1f5f9) 70%, #fff) 75%
+  );
+  background-size: 200% 100%;
+  animation: vx-skeleton-loading 1.2s ease-in-out infinite;
+}
+
+.vx-skeleton--rounded {
+  border-radius: 0.5rem;
+}
+
+@keyframes vx-skeleton-loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}

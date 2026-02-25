@@ -1,0 +1,40 @@
+.vx-flex {
+  display: flex;
+}
+
+.vx-flex--col {
+  flex-direction: column;
+}
+
+.vx-flex--wrap {
+  flex-wrap: wrap;
+}
+
+.vx-flex--align-start {
+  align-items: flex-start;
+}
+.vx-flex--align-center {
+  align-items: center;
+}
+.vx-flex--align-end {
+  align-items: flex-end;
+}
+.vx-flex--align-stretch {
+  align-items: stretch;
+}
+
+.vx-flex--justify-start {
+  justify-content: flex-start;
+}
+.vx-flex--justify-center {
+  justify-content: center;
+}
+.vx-flex--justify-end {
+  justify-content: flex-end;
+}
+.vx-flex--justify-between {
+  justify-content: space-between;
+}
+.vx-flex--justify-around {
+  justify-content: space-around;
+}

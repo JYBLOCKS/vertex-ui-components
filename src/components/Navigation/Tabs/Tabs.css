@@ -1,0 +1,33 @@
+.vx-tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.vx-tabs__list {
+  display: flex;
+  gap: 0.4rem;
+  border-bottom: 1px solid var(--vx-border, #e2e8f0);
+}
+
+.vx-tabs__list button {
+  border: none;
+  background: none;
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+  color: var(--vx-muted, #475569);
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.vx-tabs__list button.is-active {
+  color: var(--vx-text, #0f172a);
+  font-weight: 700;
+  border-bottom: 2px solid var(--vx-primary, #2563eb);
+}
+
+.vx-tabs__panel {
+  border: 1px solid var(--vx-border, #e2e8f0);
+  border-radius: 0.75rem;
+  padding: 0.9rem;
+  background: var(--vx-surface-elevated, #ffffff);
+}

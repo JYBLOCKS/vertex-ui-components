@@ -1,0 +1,29 @@
+.vx-menu {
+  list-style: none;
+  padding: 0.25rem 0;
+  margin: 0;
+  background: var(--vx-surface-elevated, #ffffff);
+  border: 1px solid var(--vx-border, #e2e8f0);
+  border-radius: 0.75rem;
+  box-shadow: var(--vx-shadow, 0 10px 28px rgba(15, 23, 42, 0.12));
+  min-width: 180px;
+}
+
+.vx-menu li a,
+.vx-menu li button {
+  width: 100%;
+  border: none;
+  background: none;
+  text-align: left;
+  padding: 0.6rem 0.85rem;
+  display: block;
+  color: var(--vx-text, #0f172a);
+  cursor: pointer;
+  border-radius: 0.75rem;
+}
+
+.vx-menu li a:hover,
+.vx-menu li button:hover {
+  border-radius: 0.75rem;
+  background: var(--vx-surface-muted, #f8fafc);
+}

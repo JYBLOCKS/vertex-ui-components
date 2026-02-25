@@ -1,0 +1,24 @@
+.vx-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 1rem;
+  border-radius: 999px;
+  border: 1px solid var(--vx-border, #e2e8f0);
+  background: var(--vx-surface-elevated, #ffffff);
+  color: var(--vx-text, #0f172a);
+  box-shadow: var(--vx-shadow, 0 4px 10px rgba(15, 23, 42, 0.05));
+}
+
+.vx-chip__close {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: var(--vx-muted, #475569);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.vx-chip__close:hover {
+  color: var(--vx-accent, #ef4444);
+}

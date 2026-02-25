@@ -1,0 +1,59 @@
+.vx-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.9rem;
+  border-radius: 0.5rem;
+  border: 1px solid transparent;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 150ms ease, color 150ms ease, border-color 150ms ease;
+}
+
+.vx-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.vx-btn--primary {
+  background-color: var(--vx-primary, #2563eb);
+  color: #fff;
+  border-color: var(--vx-primary, #2563eb);
+}
+
+.vx-btn--primary:hover:not(:disabled) {
+  background-color: color-mix(
+    in srgb,
+    var(--vx-primary, #2563eb) 88%,
+    #000
+  );
+}
+
+.vx-btn--secondary {
+  background-color: var(--vx-surface-muted, #f3f4f6);
+  color: var(--vx-text, #111827);
+  border-color: var(--vx-border, #d1d5db);
+}
+
+.vx-btn--secondary:hover:not(:disabled) {
+  background-color: color-mix(
+    in srgb,
+    var(--vx-surface-muted, #f3f4f6) 85%,
+    #000
+  );
+}
+
+.vx-btn--ghost {
+  background-color: transparent;
+  color: var(--vx-text, #111827);
+  border-color: var(--vx-border, #e5e7eb);
+}
+
+.vx-btn--ghost:hover:not(:disabled) {
+  background-color: var(--vx-surface-muted, #f6f8fb);
+}
+
+.vx-btn--block {
+  width: 100%;
+}
